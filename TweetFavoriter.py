@@ -1,8 +1,10 @@
-#### A script for exporting twitter data of a specific list
+#!/usr/bin/python3
+#MediaWiki
+#Dir: /mnt/8TB/GITS/mw_cp/
+#Output: /mnt/8TB/GITS/mw_cp/mw_site_backups/
+#Execution schedule is Wednesdays at 1:30AM  ##crontab -e
 
-#### Specify your processed directory
-backups_dir = "processed_tweets"
-
+import subprocess
 import os
 import json
 import tweepy
@@ -14,6 +16,9 @@ from sys import argv
 
 script, subject, query = argv
 
+#### Specify your processed directory
+backups_dir = "processed_tweets"
+gitPath = '/mnt/8TB/GITS/TweetFavoriter/'
 #python3 TweetFavoriter.py CRSReports "Congressional Research Service Reports"
 #python3 TweetFavoriter.py CRSReports "Congressional Research Service Report"
 #python3 TweetFavoriter.py CRSReports "CRS Reports"
@@ -176,3 +181,17 @@ f = open(processed_file, 'w')
 f.flush()
 json.dump(processed, f)
 f.close()
+
+
+#### Update git
+def update_git():
+    print("git pull")
+    subprocess.call(["git", 'pull'], cwd=gitPath)
+    print("git add .")
+    subprocess.call(["git", 'add', '.'], cwd=gitPath)
+    print("git commit -m 'mw_pages backedup'")
+    subprocess.call(["git", 'commit', '-m', '"TweetFavoriter backup updated: TweetFavoriter.py"'], cwd=gitPath)
+    print("git push -u origin master")
+    subprocess.call(["git", 'push', '-u', 'origin', 'master'], cwd=gitPath)
+
+update_git()
