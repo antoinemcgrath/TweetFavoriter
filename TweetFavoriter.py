@@ -25,9 +25,9 @@ script, subject, query = argv
 #python3 TweetFavoriter.py ChrisK "Quantitea"
 
 
-print("the script is called:", (script))
-print("your subject variable is:", (subject))
-print("your query words variable is:", (query))
+print("    1. the script is called:", (script))
+print("    2. your subject variable is:", (subject))
+print("    3. your query words variable is:", (query))
 
 
 #### Allow for reject lists (auto-lowercase for faster computing)
@@ -78,7 +78,7 @@ def twitter_rates():
                     remaining = (stats['resources'][akey][anotherkey]['remaining'])
                     used = limit - remaining
                     if used != 0:
-                        print("Twitter API used:", used, "requests used,", remaining, "remaining, for API queries to", anotherkey)
+                        print("  Twitter API used:", used, "requests used,", remaining, "remaining, for API queries to", anotherkey)
                     else:
                         pass
                 else:
@@ -90,13 +90,13 @@ def twitter_rates():
             remaining = (stats['resources'][akey]['remaining'])
             used = limit - remaining
             if used != 0:
-                print("Twitter API:", used, "requests used,", remaining, "remaining, for API queries to", akey)
+                print("  Twitter API:", used, "requests used,", remaining, "remaining, for API queries to", akey)
                 pass
 twitter_rates()
 
 
 searched_tweets = [status for status in tweepy.Cursor(api.search, q=query).items(max_tweets)]
-print(len(searched_tweets))
+print("    Tweets found in search: ", len(searched_tweets))
 
 #### Create directories when they do not exist
 def make_path_exist(path):
@@ -128,7 +128,7 @@ f.close()
 def favoriting_tweet(tweet):
     try:
         api.create_favorite(tweet.id_str)
-        print("Favoriting", tweet.id_str, tweet.text)
+        #print("Favoriting", tweet.id_str, tweet.text)
     except tweepy.TweepError as e:
         if e.api_code == 139:
             print("Your account already liked this tweet")
@@ -143,7 +143,7 @@ def process_this_tweet(tweet):
     twtext = tweet.text.lower()
     for reject_word in auto_rejects:
         if twtext.find(reject_word) != -1:
-            print("Tweet contains a reject word(s):", reject_word, twtext)
+            print("Tweet contains a reject word(s):", reject_word, tweet.id_str)
             return()
         else:
             #print("Reject word was not present")
@@ -155,18 +155,18 @@ def process_this_tweet(tweet):
 
 
 #### Process tweets & add newly processed tweets to JSON list
-print(len(processed), processed)
+#print(len(processed), processed)
 processed_count = 0
 for tweet in searched_tweets:
-    twURL = str("https://twitter.com/AGreenDCBike/status/"+tweet.id_str)
+    twURL = str("https://twitter.com/AGreenDCBike/status/" + tweet.id_str)
     if processed.count(tweet.id_str) == 0:
         process_this_tweet(tweet)
         processed.append(tweet.id_str)
-        print(twURL, tweet.text)
+        print(twURL)
     else:
         processed_count += 1
         pass
-print("Tweets already processed:", processed_count)
+print("    Tweets already processed:", processed_count)
 
 #print(len(processed), processed)
 
