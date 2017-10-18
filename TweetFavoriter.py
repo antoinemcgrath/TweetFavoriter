@@ -38,9 +38,9 @@ print("    3. your query words variable is:", (query))
 #### Allow for reject lists (auto-lowercase for faster computing)
 auto_rejects = ['100 crs', 'TurkeyInsights', 'Crs_tiant', 'pakai', 'CAR014, Neuro', 'toxicities',
                 'crosses', 'Judwa2,' 'BoxOffice', 'Common Reporting Standard', 'CAR-T', 'lac crs',
-                'ZairaWasim', 'bollywood', 'Qiita', 'Emaar',
-                'Speechlys', 'CRS_Healthcare', 'pharmac', 'csr', 'god', '20 crs', 'white nationalist',
-                'KKK','nazi','hitler','tea party', 'tea pain', 'tea bagger', 'racist', 'fuck']
+                'ZairaWasim', 'bollywood', 'Qiita', 'Emaar', 'CRSHOA', 'CRS_HOA', '#CSR', 'potaan',
+                'Speechlys', 'CRS_Healthcare', 'pharmac', 'csr', 'god', '20 crs', 'white nationalist', 'CRSHA',
+                'KKK','nazi','hitler','tea party', 'tea pain', 'tea bagger', 'racist', 'fuck', 'CRS_Expertise']
 
 lower_auto_rejects = []
 for ban in auto_rejects:
