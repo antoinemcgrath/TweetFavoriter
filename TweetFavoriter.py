@@ -36,10 +36,10 @@ print("    3. your query words variable is:", (query))
 
 
 #### Allow for reject lists (auto-lowercase for faster computing)
-auto_rejects = ['100 crs', 'TurkeyInsights', 'Crs_tiant', 'pakai', 'CAR014, Neuro', 'toxicities', 'jamesjameson331', 'GUDID', 'Ramesh', 'Khatauli',
-                'crosses', 'Judwa2,' 'BoxOffice', 'Common Reporting Standard', 'CAR-T', 'lac crs', 'FALCON', 'ramikstalk', 'STEPSociety', 'Golmaal',
-                'ZairaWasim', 'bollywood', 'Qiita', 'Emaar', 'CRSHOA', 'CRS_HOA', '#CSR', 'potaan', 'AjEeT', 'ajakkumama9', 'kamaldaiya66', 'CbC',
-                'Speechlys', 'CRS_Healthcare', 'pharmac', 'csr', 'god', '20 crs', 'white nationalist', 'CRSHA', 'JassimShams',
+auto_rejects = ['100 crs', 'TurkeyInsights', 'Crs_tiant', 'pakai', 'CAR014, Neuro', 'toxicities', 'jamesjameson331', 'GUDID', 'Ramesh', 'Khatauli', 'ggrc_army',
+                'crosses', 'Judwa2,' 'BoxOffice', 'Common Reporting Standard', 'CAR-T', 'lac crs', 'FALCON', 'ramikstalk', 'STEPSociety', 'Golmaal', 'bharatkumarj',
+                'ZairaWasim', 'bollywood', 'Qiita', 'Emaar', 'CRSHOA', 'CRS_HOA', '#CSR', 'potaan', 'AjEeT', 'ajakkumama9', 'kamaldaiya66', 'CbC', 'GST', 'smallwars', 'AnankeGroup',
+                'Speechlys', 'CRS_Healthcare', 'pharmac', 'csr', 'god', '20 crs', 'white nationalist', 'CRSHA', 'JassimShams', 'GamitArvind2', 'hiitsakira',
                 'KKK','nazi','hitler','tea party', 'tea pain', 'tea bagger', 'racist', 'fuck', 'CRS_Expertise']
 
 lower_auto_rejects = []
