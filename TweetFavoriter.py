@@ -48,10 +48,11 @@ auto_rejects = ['100 crs', 'TurkeyInsights', 'Crs_tiant', 'pakai', 'CAR014, Neur
                 'pharmac', 'csr', 'god', '20 crs', 'ReeceJHarley',
                 'white nationalist', 'CRSHA', 'SaveAustralia1',
                 'JassimShams', 'GamitArvind2', 'Sarcasm_taken',
-                'hiitsakira', 'Xtreme', 'CanolaTrish',
-                'KKK','nazi','hitler', 'ettirankandath',
-                'tea party', 'tea pain',
-                'tea bagger', 'racist',
+                'hiitsakira', 'Xtreme', 'CanolaTrish', 'bjp4kheda',
+                'KKK','nazi','hitler', 'ettirankandath', 'nippondanji', 
+                'tea party', 'tea pain', 'chitralekhamag', 'reddy329',
+                'tea bagger', 'racist', 'VtvGujarati', 'nb2286', 'Crs_tiant',
+                'ResponsibleSourcing', 'ankurmodi5491',
                 'fuck', 'CRS_Expertise']
 
 lower_auto_rejects = []
