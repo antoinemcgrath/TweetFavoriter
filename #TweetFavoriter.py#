@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #!/usr/bin/python3
 #MediaWiki
 #Dir: /mnt/8TB/GITS/mw_cp/
@@ -44,7 +60,7 @@ auto_rejects = ['100 crs', 'TurkeyInsights', 'Crs_tiant', 'pakai', 'CAR014, Neur
                 'bollywood', 'Qiita', 'Emaar', 'CRSHOA', 'CRS_HOA',
                 '#CSR', 'potaan', 'AjEeT', 'ajakkumama9', 'CanolaTrish',
                 'kamaldaiya66', 'CbC', 'GST', 'smallwars', 'CyberDomain',
-                'AnankeGroup', 'Speechlys', 'CRS_Healthcare', 'websecurite',
+                'AnankeGroup', 'Speechlys', 'CRS_Healthcare',
                 'pharmac', 'csr', 'god', '20 crs', 'ReeceJHarley',
                 'white nationalist', 'CRSHA', 'SaveAustralia1',
                 'JassimShams', 'GamitArvind2', 'Sarcasm_taken',
@@ -176,8 +192,7 @@ def favoriting_tweet(tweet):
 
 #### Definition of tweet processing
 def process_this_tweet(tweet):
-    twuser = tweet.user.screen_name
-    print(twuser)
+    twuser = tweet.user.name
     result = bom.check_account(twuser)
     score = result['scores']['english']
     print(twuser, score)
