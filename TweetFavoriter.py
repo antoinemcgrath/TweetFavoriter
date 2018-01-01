@@ -181,7 +181,7 @@ def process_this_tweet(tweet):
     result = bom.check_account(twuser)
     score = result['scores']['english']
     print(twuser, score)
-    if score > 70:
+    if score > .70:
         print("Pass. Possible bot:", twuser, score)
         return()
     twtext = tweet.text.lower()
