@@ -66,8 +66,8 @@ keys_json = json.load(open('/usr/local/keys.json'))
 
 
 #### Specify key dictionary wanted (generally [Platform][User][API])
-#Keys = keys_json["Twitter"]["ClimateCong_Bot"]["ClimatePolitics"]
-Keys = keys_json["Twitter"]["AGreenDCBike"]["Mentions_Monitor"]
+Keys = keys_json["Twitter"]["ClimateCong_Bot"]["ClimatePolitics"]
+#Keys = keys_json["Twitter"]["AGreenDCBike"]["Mentions_Monitor"]
 
 
 
@@ -192,7 +192,7 @@ def process_this_tweet(tweet):
         else:
             #print("Reject word was not present")
             pass
-        
+
     #print("Detect Sentiment", "Tweet it now")
     favoriting_tweet(tweet)
     return()
